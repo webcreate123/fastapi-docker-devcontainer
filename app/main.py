@@ -5,6 +5,7 @@ from typing import List, Optional
 import uvicorn
 from datetime import datetime
 import uuid
+import debugpy
 
 app = FastAPI(
     title="TODO API",
@@ -124,4 +125,9 @@ async def toggle_todo(todo_id: str):
     return todo
 
 if __name__ == "__main__":
+    # Enable remote debugging
+    debugpy.listen(("0.0.0.0", 5678))
+    print("⏳ Debugger is listening on port 5678...")
+    # debugpy.wait_for_client()  # Uncomment to wait for debugger
+
     uvicorn.run(app, host="0.0.0.0", port=8000)
