@@ -1,0 +1,12 @@
+Build image: docker build -t fastapi-image .
+View images: docker images
+Run cointainer with previous image: docker run --name fastapi-container -p 80:80 fastapi-image
+Run cointainer with previous image in detach mode: docker run --name fastapi-container -p 80:80 -d fastapi-image
+Run cointainer with previous image in detach mode, mapping a volumen: 
+    docker run --name fastapi-container -p 80:80 -d -v ${pwd}:/code fastapi-image
+Remove cointainer: docker rm fastapi-container
+View Running container: docker ps
+Stop container: docker stop fastapi-container
+Create and Run a container from docker-compose.yml: docker-compose up
+Remove a docker-compose container: docker-comppse down
+Rebuilding the docker image, Create and Run in detach mode : docker-compose up --build -d
