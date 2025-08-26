@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   todo-api:
     build: .
@@ -7,7 +5,7 @@ services:
       - "8002:8002"
       - "5679:5679"  # Add debug port
     volumes:
-    - ..:/workspace:cached
+    - ..:/app:cached
     environment:
       - PYTHONPATH=/app
       - PYTHONUNBUFFERED=1
