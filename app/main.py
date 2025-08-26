@@ -7,9 +7,6 @@ from datetime import datetime
 import uuid
 import debugpy
 
-debugpy.listen(("0.0.0.0", 5678))
-print("Debugger is active. Attach VS Code to port 5678 to debug.")
-
 app = FastAPI(
     title="TODO API",
     description="A simple TODO API built with FastAPI",
@@ -129,8 +126,7 @@ async def toggle_todo(todo_id: str):
 
 if __name__ == "__main__":
     # Enable remote debugging
-    debugpy.listen(("0.0.0.0", 5678))
-    print("⏳ Debugger is listening on port 5678...")
-    debugpy.wait_for_client()  # Wait for debugger to connect
+    debugpy.listen(("0.0.0.0", 5679))
+    print("⏳ Debugger is listening on port 5679...")
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    uvicorn.run(app, host="0.0.0.0", port=8002)
