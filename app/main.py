@@ -126,7 +126,7 @@ async def toggle_todo(todo_id: str):
 
 if __name__ == "__main__":
     # Enable remote debugging
-    debugpy.listen(("0.0.0.0", 5679))
-    print("⏳ Debugger is listening on port 5679...")
+    debugpy.listen(("0.0.0.0", 5678))
+    print("⏳ Debugger is listening on port 5678...")
 
-    uvicorn.run(app, host="0.0.0.0", port=8002)
+    uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -34,8 +34,8 @@ A simple and modern TODO API built with FastAPI, Docker, and Dev Container suppo
 2. Install the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 3. Open this project in VS Code
 4. When prompted, click "Reopen in Container"
-5. The API will be available at `http://localhost:8002`
-6. API documentation at `http://localhost:8002/docs`
+5. The API will be available at `http://localhost:8000`
+6. API documentation at `http://localhost:8000/docs`
 
 ### Option 2: Using Docker Compose
 
@@ -66,7 +66,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 
 # Run the application
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8002
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ## Development
@@ -101,7 +101,7 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8002
 ### Create a TODO
 
 ```bash
-curl -X POST "http://localhost:8002/todos" \
+curl -X POST "http://localhost:8000/todos" \
      -H "Content-Type: application/json" \
      -d '{
        "title": "Learn FastAPI",
@@ -112,13 +112,13 @@ curl -X POST "http://localhost:8002/todos" \
 ### Get all TODOs
 
 ```bash
-curl "http://localhost:8002/todos"
+curl "http://localhost:8000/todos"
 ```
 
 ### Update a TODO
 
 ```bash
-curl -X PUT "http://localhost:8002/todos/{id}" \
+curl -X PUT "http://localhost:8000/todos/{id}" \
      -H "Content-Type: application/json" \
      -d '{
        "completed": true
@@ -128,7 +128,7 @@ curl -X PUT "http://localhost:8002/todos/{id}" \
 ### Toggle completion status
 
 ```bash
-curl -X PATCH "http://localhost:8002/todos/{id}/toggle"
+curl -X PATCH "http://localhost:8000/todos/{id}/toggle"
 ```
 
 ## Environment Variables

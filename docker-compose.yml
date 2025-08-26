@@ -2,11 +2,11 @@ services:
   todo-api:
     build: .
     ports:
-      - "8002:8002"
-      - "5679:5679"  # Add debug port
+      - "8000:8000"
+      - "5678:5678"  # Add debug port
     volumes:
-    - ..:/app:cached
+    - ..:/workspace:cached
     environment:
-      - PYTHONPATH=/app
+      - PYTHONPATH=/workspace
       - PYTHONUNBUFFERED=1
     restart: unless-stopped
