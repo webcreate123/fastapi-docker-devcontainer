@@ -53,7 +53,7 @@ async def root():
 
 @app.get("/health")
 async def health_check():
-    return {"status": "healthy", "timestamp": datetime.now()}
+    return {"status": "healthy okay", "timestamp": datetime.now()}
 
 @app.get("/todos", response_model=List[Todo])
 async def get_todos():
